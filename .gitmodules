@@ -1,3 +1,4 @@
 [submodule "lib"]
 	path = agent-core
 	url = https://github.com/galaxyginx/agent-core.git
+	branch = main
