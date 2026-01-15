@@ -1,8 +1,7 @@
 import { Metadata } from "next"
 import { baseUrl, appName } from "@/agent-core/types"
 import { PageProps } from "@/types"
-import { getTranslation } from "@/translation"
-import { getRegionPath } from "@/translation/RegionPath"
+import { getTranslation, getRegionPath } from "@/translation"
 import HomePage from "@/app/page"
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

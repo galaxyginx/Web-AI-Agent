@@ -11,3 +11,21 @@ const languagess = {
 }
 
 export const getTranslation = async (locale: Language) => supported_languages.some(lang => lang == locale) ? languagess[locale]() : import('./languages/en.json').then((module) => module.default)
+
+export function getRegionPath(language: Language) {
+    switch (language) {
+        case 'jp':
+            return '/jp/'
+        default:
+            return '/'
+    }
+}
+
+export function getLocalePath(locale: Language) {
+    switch (locale) {
+        case 'jp':
+            return '/jp/'
+        default:
+            return '/'
+    }
+}

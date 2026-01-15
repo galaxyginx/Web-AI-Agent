@@ -1,11 +1,10 @@
 import { Metadata } from "next"
 import { baseUrl, appName } from "@/agent-core/types"
 import { PageProps } from "@/types"
-import { getTranslation } from "@/translation"
+import { getTranslation, getRegionPath } from "@/translation"
 import BaseLayout from "@/components/templates/BaseLayout"
 import ChatView from "@/components/organisms/ChatView"
 import { getMasterData } from "@/requests/ServerRequest"
-import { getRegionPath } from "@/translation/RegionPath"
 import { headers } from "next/headers"
 import { isMobileDevice } from "@/lib/utils"
 

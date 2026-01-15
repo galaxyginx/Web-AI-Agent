@@ -1,11 +1,10 @@
 import { Metadata } from "next"
 import { baseUrl, appName } from "@/agent-core/types"
 import { PageProps } from "@/types"
-import { getTranslation } from "@/translation"
+import { getTranslation, getRegionPath } from "@/translation"
 import BaseLayout from "@/components/templates/BaseLayout"
-import ChatView from "@/components/organisms/ChatView"
+import { HomeView } from "@/components/organisms/HomeView"
 import { getMasterData } from "@/requests/ServerRequest"
-import { getRegionPath } from "@/translation/RegionPath"
 import { headers } from "next/headers"
 import { isMobileDevice } from "@/lib/utils"
 
@@ -32,6 +31,6 @@ export default async function HomePage({ params }: PageProps) {
   const [masterData, t, header] = await Promise.all([getMasterData(), getTranslation(locale), headers()])
   const isMobile = isMobileDevice(header.get("user-agent"))
   return <BaseLayout masterData={{ ...masterData, locale }} t={t} isMobile={isMobile}>
-    <ChatView masterData={{...masterData, locale}} t={t} isMobile={isMobile} />
+    <HomeView masterData={{...masterData, locale}} t={t} isMobile={isMobile} />
   </BaseLayout>
 }

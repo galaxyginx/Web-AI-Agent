@@ -12,12 +12,13 @@
     "edit": "編集",
     "delete": "削除",
     "add_to_home": "ホーム画面に追加",
-    "contribute": "運営にジョイン",
     "back_to_signin": "ログイン画面に戻る",
     "search": "検索",
     "searched_query": "検索結果：",
     "title": "GalaxyX Agent",
     "send": "送信",
+    "youtube": "YouTube",
+    "xxxspace_detail": "成人向けアダルトSNS・プラットフォーム",
     "go_back_to_home": "ホームに戻る",
     "new_password": "新しいパスワード：最低8文字以上である必要があります",
     "confirm_password": "パスワード確認",
@@ -35,6 +36,8 @@
     "premium_plan": "プレミアムプラン",
     "load_more": "更に読み込む",
     "language": "言語：",
+    "ai_models": "AI モデル",
+    "ai_models_detail": "現在開発中のモデルのサンプルになります。TensorFlowがサンプルとしているモデルも含みます。",
     "post": {
         "title": "投稿",
         "views": "再生数",
@@ -193,5 +196,11 @@
         "pricing": "会費",
         "monthly": "月額",
         "annually": "年額"
+    },
+    "aviation_ai": {
+        "title": "航空AI",
+        "description": "飛行機の機種名を識別するAI",
+        "detail": "飛行機の画像を選んで頂くと機種名を予測します。将来的には航空会社、便名まで識別する事を目標に開発しているAIです。こういったAIが飛行機事故を減らしたり、航空安全の向上に役立てられる事があればと思っています。",
+        "supported_aircrafts": "現時点での対応機種(精度約5割)：A330, A380, B737, B747, B767, B777, B787"
     }
 }

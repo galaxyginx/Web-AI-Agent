@@ -12,12 +12,13 @@
     "edit": "Edit",
     "delete": "Delete",
     "add_to_home": "Add to home",
-    "contribute": "Contribute",
     "back_to_signin": "Back to Sign in",
     "search": "Search...",
     "searched_query": "Result: ",
     "title": "GalaxyX Agent",
     "send": "Send",
+    "youtube": "YouTube",
+    "xxxspace_detail": "Our adult oriented platform for sharing sexual/NSFW content.",
     "go_back_to_home": "Go back to home",
     "new_password": "New Password: has to be more than 8 characters",
     "confirm_password": "Confirm Password",
@@ -35,6 +36,8 @@
     "premium_plan": "Premium plan",
     "load_more": "Load more",
     "language": "Language: ",
+    "ai_models": "AI Models",
+    "ai_models_detail": "The models built for aviation.",
     "post": {
         "title": "Post",
         "views": "Views",
@@ -192,5 +195,11 @@
         "pricing": "Pricing",
         "monthly": "Monthly",
         "annually": "Annually"
+    },
+    "aviation_ai": {
+        "title": "Aviation AI",
+        "description": "Models for detecting & identifying the aircraft",
+        "detail": "Pick your aircraft image & the AI will predict the model of the aircraft. We also aim to detect airline, flight number in the future & we hope this kind of technology helps reducing the accidents / contribute for Aviation safety in the future.",
+        "supported_aircrafts": "Current supported aircrafts(50% accuracy): A330, A380, B737, B747, B767, B777, B787"
     }
 }

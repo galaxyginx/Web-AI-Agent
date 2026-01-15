@@ -9,6 +9,8 @@ import { Card } from "../ui/card";
 import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupText, InputGroupTextarea } from "../ui/input-group";
 import { ArrowUpIcon } from "lucide-react";
 import { ENDPOINT } from "@/requests/Config";
+import { AppSidebar } from "../molecules/AppSidebar";
+import { NavBar } from "../molecules/NavBar";
 
 export default function ChatView({ masterData, t, isMobile }: ViewProps) {
     const [messages, setMessages] = useState<Message[]>([]);
@@ -18,10 +20,17 @@ export default function ChatView({ masterData, t, isMobile }: ViewProps) {
     const supabase = supabaseBrowser()
     const shortTermMemory = useRef<ShortMemory[]>([]);
     const [isClient, setIsClient] = useState(false);
+    const listRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (isMobile) setIsClient(true);
     }, [isMobile]);
+
+    useEffect(() => {
+        if (listRef.current) {
+            listRef.current.scrollTop = listRef.current.scrollHeight;
+        }
+    }, [messages, loading]);
     
     async function send() {
         if (loading) return;
@@ -64,10 +73,12 @@ export default function ChatView({ masterData, t, isMobile }: ViewProps) {
 
     return (
         <div className="flex flex-col w-full px-4">
-            {messages.length > 0 ? <div className="flex flex-col h-[77vh] py-2 tablet:mx-96 overflow-y-scroll">
+            <AppSidebar masterData={masterData} t={t} isMobile={isMobile}/>
+            <NavBar masterData={masterData} t={t} isMobile={isMobile}/>
+            {messages.length > 0 ? <div ref={listRef} className="flex flex-col h-[77vh] py-2 tablet:mx-96 overflow-y-scroll">
                 {messages.map((m, i) => {
                     if (m.role === "Agent") {
-                        return <div key={i} className="p-2 self-start">
+                        return <div key={i} className="p-2 my-4 self-start">
                                 {m.content}
                             </div>
                     } else {
@@ -76,7 +87,7 @@ export default function ChatView({ masterData, t, isMobile }: ViewProps) {
                             </Card>
                     }
                 })}
-                {loading && <div className="flex mb-2">
+                {loading && <div className="flex my-4">
                     <Indicator />
                 </div>}
             </div>: <div className="flex w-full h-[200px] items-center justify-center p-4">

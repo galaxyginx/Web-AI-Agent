@@ -10,9 +10,7 @@ interface Props extends ViewProps {
 
 export default function BaseLayout({ children, masterData, t, isMobile }: Props) {
     return <SidebarProvider>
-        <AppSidebar masterData={masterData} t={t} isMobile={isMobile} />
-        <main className="bg-gray-900 w-full h-screen text-white">
-            <NavBar masterData={masterData} t={t} isMobile={isMobile} />
+        <main className="bg-gray-900 w-screen h-screen text-white">
             {cloneElement(children, { masterData, isMobile })}
         </main>
     </SidebarProvider>
